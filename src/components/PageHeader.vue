@@ -4,6 +4,40 @@ export default {
     return {
       title: 'boolando',
       logo:'/img/boolean-logo.png',
+      menuLeft: [
+        {
+            gender: 'Uomo',
+            link: "#"
+        },
+        {
+            gender: 'Donna ',
+            link: "#"
+        },
+        {
+            gender: 'Bambino',
+            link: "#"
+        },
+
+      ],
+      
+    menuRight: [
+        {
+            style: "fa-solid",
+            icon: "fa-user",
+            link: "#"
+        },
+        {
+            style: "fa-solid",
+            icon: "fa-user",
+            link: "#"
+        },
+        {
+            style: "fa-solid",
+            icon: "fa-user",
+            link: "#"
+        },
+
+      ]
 
     }
   }
@@ -16,12 +50,8 @@ export default {
       <div class="row">
         <div class="col">
           <ul class="menu">
-            <li ><a href="#">Donna</a>
-            </li>
-            <li ><a href="#">Uomo</a>
-            </li>
-            <li ><a href="#">Bambino</a>
-            </li>
+            <li v-for="(gender , i) in menuLeft" :key="i"><a :href=' gender.link '>{{ gender.gender }}</a></li>
+          
           </ul>
         </div>
         <div class="col">
@@ -32,9 +62,8 @@ export default {
         <div class="col">
            
             <ul class="menu">
-              <li><a href="#">A</a></li>
-              <li><a href="#">B</a></li>
-              <li><a href="#">C</a></li>
+              <li v-for="(icon, i) in menuRight" :key="i"><a :href=" icon.link "><i :class='[icon.icon, icon.style]'  ></i></a></li>
+              
              
             </ul>
         </div>

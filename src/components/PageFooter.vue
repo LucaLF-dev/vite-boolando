@@ -48,6 +48,7 @@ export default {
 .page-footer {
     background-color: #1A1A1A;
     color: white;
+    padding:  10px;
 
     .row {
        display: flex;

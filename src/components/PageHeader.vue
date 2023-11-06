@@ -48,7 +48,7 @@ export default {
 .page-header {
     background-color: #FF6900;
     color: white;
-    padding: 15px 0;
+    padding: 15px 10px;
 
     .row {
         display: flex;

@@ -29,8 +29,15 @@ export default {
 						</li>
 					</ul>
 				</div>
-				<div class="col">
+				<div class="col social">
 					<h5>Trovaci anche su</h5>
+                    <ul>
+                        <li>s</li>
+                        <li>s</li>
+                        <li>s</li>
+                        <li>s</li>
+                        <li>s</li>
+                    </ul>
 				</div>
 			</div>
 		</div>
@@ -39,16 +46,25 @@ export default {
 
 <style lang="scss" scoped>
 .page-footer {
-	// background-color: burlywood;
-	background-image: url("/img/footer-montagne-bottom.jpg");
-	background-position: bottom center;
-	background-size: 100%;
-	background-repeat: no-repeat;
-	padding: 40px 20px 100px;
+    background-color: #1A1A1A;
+    color: white;
+
+    .row {
+       display: flex;
+    }
 }
+
 
 .col {
 	flex-basis: 0;
 	flex-grow: 1;
+
+    &.social {
+        display: flex;
+        justify-content: flex-end;
+       
+
+        
+    }
 }
 </style>

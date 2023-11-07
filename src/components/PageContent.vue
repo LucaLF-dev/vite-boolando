@@ -1,44 +1,49 @@
 <script>
-import CardPageContent from './CardPageContent.vue';
-
+import CardPageContent from "./CardPageContent.vue";
+import productsJson from "../db.json";
 
 export default {
-    components: {
-        CardPageContent,
-    },
+	components: {
+		CardPageContent,
+	},
 
-    data() {
-        return {};
-    },
-   
+	data() {
+		return {
+			products: productsJson.products,
+		};
+	},
+	mounted() {
+	},
 };
 </script>
 
 <template>
 	<main>
-        <div class="container">
-            <div class="row">
-                <div v-for="n in 6" :key="n"  class="col-4">
-                       <CardPageContent/>
-                </div>
-            </div>
-        </div>
-    </main>
+		<div class="container">
+			<div class="row">
+				<div
+					v-for="(product, id) in products"
+					:key="id"
+					:log="console.log(product)"
+					class="col-4"
+				>
+					<CardPageContent :item="product" />
+				</div>
+			</div>
+		</div>
+	</main>
 </template>
 
 <style lang="scss" scoped>
-
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 40px;
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 40px;
 
-    .col-4 {
-    flex-basis: calc((100% / 12) * 4);
-    padding: 10px;
+	.col-4 {
+		
+		flex-basis: calc((100% / 12) * 4);
+		padding: 10px;
+	}
 }
- 
-}
-
-
 </style>

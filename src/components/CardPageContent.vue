@@ -7,7 +7,9 @@ export default {
 		},
 	},
 	data() {
-		return {};
+		return {
+
+        };
 	},
 };
 </script>
@@ -17,10 +19,9 @@ export default {
 		<figure class="card-image">
 			<img class="first-image" :src="item.frontImage" alt="" />
 			<img class="second-image" :src="item.backImage" alt="" />
-			<span class="heart-icon"> &hearts; </span>
+			<span class="heart-icon "  :class="{ 'active' : item.isInFavorites}" > &hearts; </span>
 			<div class="banner-image">
-				<span class="banner discount-icon">-50%</span>
-				<span class="banner mission-icon">Sostenibilità</span>
+				<span v-for="badge in item.badges" class="banner" :class="badge.type">{{ badge.value }}</span>
 			</div>
 		</figure>
 
@@ -29,7 +30,7 @@ export default {
 				<li class="card-brand-description">{{ item.brand }}</li>
 				<li class="card-name-description">{{ item.name }}</li>
 				<li class="card-price-description">
-					14,99 &euro; <span class="strike"> {{item.price}} &euro;</span>
+					<span > {{item.price}} &euro;</span>
 				</li>
 			</ul>
 		</div>
@@ -71,7 +72,7 @@ export default {
 }
 
 .card-price-description {
-	color: red;
+	color: black;
 }
 
 span.strike {
@@ -90,33 +91,44 @@ span.strike {
 	padding: 10px;
 	text-align: center;
 	z-index: 1;
+
+    &.active {
+        color:red;
+    }
 }
 
 .banner-image {
 	position: absolute;
 	width: 100%;
 	bottom: 20px;
-	left: 0;
+	
 	.banner {
 		color: white;
 		font-size: 13px;
 		font-weight: 500;
 		height: 20px;
 		padding: 3px;
-	}
 
-	.discount-icon {
+        &.discount{
 		background-color: red;
 		width: 5px;
-	}
+        position: relative;
+     
+	    }
 
-	.mission-icon {
+        &.tag {
 		background-color: green;
 		width: 20px;
 		position: relative;
-		left: 8px;
+      
+		
 	}
+
+	}
+
+	
 }
+	
 
 .discount-icon {
 	background-color: red;

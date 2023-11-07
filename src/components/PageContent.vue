@@ -24,7 +24,7 @@ export default {
 				<div
 					v-for="(product, id) in products"
 					:key="id"
-					:log="console.log(product)"
+					
 					class="col-4"
 				>
 					<CardPageContent :item="product" />

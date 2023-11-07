@@ -19,25 +19,26 @@ export default {
         },
 
       ],
-      
-    menuRight: [
+      menuRight: [
         {
-            style: "fa-solid",
-            icon: "fa-user",
+            type: ['far', 'user'],
+         
             link: "#"
         },
         {
-            style: "fa-solid",
-            icon: "fa-user",
+            type: ['far', 'heart'],
+           
             link: "#"
         },
         {
-            style: "fa-solid",
-            icon: "fa-user",
+            type: ['fas', 'bag-shopping'],
+            
             link: "#"
         },
 
-      ]
+      ],
+      
+    
 
     }
   }
@@ -62,7 +63,7 @@ export default {
         <div class="col">
            
             <ul class="menu">
-              <li v-for="(icon, i) in menuRight" :key="i"><a :href=" icon.link "><i :class='[icon.icon, icon.style]'  ></i></a></li>
+              <li v-for="(icon, i) in menuRight" :key="i"><a :href=" icon.link "><font-awesome-icon :icon="['fas', 'bag-shopping']" /></a></li>
               
              
             </ul>

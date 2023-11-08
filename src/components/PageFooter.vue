@@ -57,7 +57,7 @@ export default {
 				<div class="col social">
 					<h5>Trovaci anche su</h5>
 					<ul class="list-social-icon">
-						<li v-for="(brand, i) in menuBrands"><a :href="brand.link"><font-awesome-icon :icon="brand.type" /></a></li>
+						<li v-for="(brand, i) in menuBrands"><a :href="brand.link"><font-awesome-icon class="icon-brand" :icon="brand.type" /></a></li>
 					</ul>
 				</div>
 			</div>
@@ -67,10 +67,10 @@ export default {
 
 <style lang="scss" scoped>
 .page-footer {
+	padding: 20px 10px;
 	background-color: #1a1a1a;
 	color: white;
-	padding: 10px;
-
+	
 	.row {
 		display: flex;
 		padding: 0 10px;
@@ -104,6 +104,10 @@ export default {
 			justify-content: flex-end;
 			gap: 5px;
 			margin-top: 10px;
+
+			.icon-brand {
+				font-size: 25px;
+			}
 		}
 	}
 }

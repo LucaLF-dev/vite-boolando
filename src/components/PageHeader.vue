@@ -1,7 +1,10 @@
 <script>
+import {store} from '../store'
+
 export default {
   data() {
     return {
+      store: store,
       title: 'boolando',
       logo:'/img/boolean-logo.png',
       menuLeft: [
@@ -63,7 +66,7 @@ export default {
         <div class="col">
            
             <ul class="menu">
-              <li v-for="(icon, i) in menuRight" :key="i"><a :href=" icon.link "><font-awesome-icon :icon="['fas', 'bag-shopping']" /></a></li>
+              <li v-for="(icon, i) in menuRight" :key="i"><a :href=" icon.link "><font-awesome-icon :icon="icon.type" /></a></li>
               
              
             </ul>
@@ -84,6 +87,7 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 0 10px;
 
         .menu {
             display: flex;

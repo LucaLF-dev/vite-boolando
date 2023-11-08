@@ -1,6 +1,7 @@
 <script>
 import CardPageContent from "./CardPageContent.vue";
-import productsJson from "../db.json";
+// import productsJson from "../db.json";
+import { store } from "../store"
 
 export default {
 	components: {
@@ -9,10 +10,13 @@ export default {
 
 	data() {
 		return {
-			products: productsJson.products,
+			store: store,
+			products: store.products,
+			// products: productsJson.products,
 		};
 	},
 	mounted() {
+		console.log(this.products)
 	},
 };
 </script>

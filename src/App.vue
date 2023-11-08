@@ -3,6 +3,7 @@
 import PageHeader from './components/PageHeader.vue';
 import PageFooter from './components/PageFooter.vue';
 import PageContent from './components/PageContent.vue';
+import {store} from './store'
 
 export default {
   components: {
@@ -14,6 +15,7 @@ export default {
   },
   data() {
     return {
+      store: store,
       message: 'Hello world!'
     }
   }

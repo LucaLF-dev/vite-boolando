@@ -1,7 +1,12 @@
 <script>
+
+import { faProductHunt } from '@fortawesome/free-brands-svg-icons';
+import {store} from '../store' ;
+
 export default {
 	data() {
 		return {
+			store: store,
 			title: "Boolando s.r.l",
 			policy_one: "Informazioni legali ",
 			policy_two: "Informativa privacy ",
@@ -31,7 +36,7 @@ export default {
 				</div>
 				<div class="col social">
 					<h5>Trovaci anche su</h5>
-                    <ul>
+                    <ul class="list-social-icon">
                         <li>s</li>
                         <li>s</li>
                         <li>s</li>
@@ -52,6 +57,7 @@ export default {
 
     .row {
        display: flex;
+	   padding: 0 10px;
     }
 }
 
@@ -59,12 +65,21 @@ export default {
 .col {
 	flex-basis: 0;
 	flex-grow: 1;
+	
 
     &.social {
         display: flex;
-        justify-content: flex-end;
+  
+		flex-wrap: wrap;
+		flex-direction: column;
+		
        
-
+        .list-social-icon {
+			display: flex;
+			justify-content: end;
+			
+		
+		}
         
     }
 }

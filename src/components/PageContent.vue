@@ -24,8 +24,6 @@ export default {
 
 <template>
 	<main>
-		<h1>{{ store.contatore }}</h1>
-		<button @click="store.incrementa()">INCR</button>
 		<div class="container">
 			<div class="row">
 				<div

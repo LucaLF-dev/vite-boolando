@@ -11,6 +11,8 @@ import { faUser,faHeart } from "@fortawesome/free-regular-svg-icons";
 
 import {  faBagShopping } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faHeart, faBagShopping, faUser);
+import {  faSquareFacebook,faSquareInstagram,faSquareTwitter,faSquarePinterest,faSquareYoutube } from "@fortawesome/free-brands-svg-icons";
+
+library.add(faHeart, faBagShopping, faUser, faSquareFacebook,faSquareInstagram,faSquareTwitter,faSquarePinterest,faSquareYoutube);
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");

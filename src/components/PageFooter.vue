@@ -1,7 +1,5 @@
 <script>
-
-import { faProductHunt } from '@fortawesome/free-brands-svg-icons';
-import {store} from '../store' ;
+import { store } from "../store";
 
 export default {
 	data() {
@@ -11,6 +9,28 @@ export default {
 			policy_one: "Informazioni legali ",
 			policy_two: "Informativa privacy ",
 			policy_three: "Diritto di recesso ",
+			menuBrands: [
+				{
+					type: ["fab", "square-instagram"],
+					link: "#",
+				},
+				{
+					type: ["fab", "square-facebook"],
+					link: "#",
+				},
+				{
+					type: ["fab", "square-twitter"],
+					link: "#",
+				},
+				{
+					type: ["fab", "square-pinterest"],
+					link: "#",
+				},
+				{
+					type: ["fab", "square-youtube"],
+					link: "#",
+				},
+			],
 		};
 	},
 };
@@ -20,7 +40,7 @@ export default {
 	<footer class="page-footer">
 		<div class="container">
 			<div class="row">
-				<div class="col">
+				<div class="col policy">
 					<h4>{{ title }}</h4>
 					<ul class="footer-policy">
 						<li>
@@ -36,13 +56,9 @@ export default {
 				</div>
 				<div class="col social">
 					<h5>Trovaci anche su</h5>
-                    <ul class="list-social-icon">
-                        <li>s</li>
-                        <li>s</li>
-                        <li>s</li>
-                        <li>s</li>
-                        <li>s</li>
-                    </ul>
+					<ul class="list-social-icon">
+						<li v-for="(brand, i) in menuBrands"><a :href="brand.link"><font-awesome-icon :icon="brand.type" /></a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -51,36 +67,44 @@ export default {
 
 <style lang="scss" scoped>
 .page-footer {
-    background-color: #1A1A1A;
-    color: white;
-    padding:  10px;
+	background-color: #1a1a1a;
+	color: white;
+	padding: 10px;
 
-    .row {
-       display: flex;
-	   padding: 0 10px;
-    }
+	.row {
+		display: flex;
+		padding: 0 10px;
+	}
 }
-
 
 .col {
 	flex-basis: 0;
 	flex-grow: 1;
-	
+	justify-content:center ;
 
-    &.social {
-        display: flex;
-  
+	&.policy {
+
+		.footer-policy {
+			display: flex;
+			gap: 8px;
+			margin-top: 10px;
+		}
+	}
+	&.social {
+		display: flex;
 		flex-wrap: wrap;
 		flex-direction: column;
-		
-       
-        .list-social-icon {
-			display: flex;
-			justify-content: end;
-			
-		
+		text-align: right;
+
+		h5 {
+			padding-right: 10px;
 		}
-        
-    }
+		.list-social-icon {
+			display: flex;
+			justify-content: flex-end;
+			gap: 5px;
+			margin-top: 10px;
+		}
+	}
 }
 </style>

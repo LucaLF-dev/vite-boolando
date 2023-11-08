@@ -1,37 +1,40 @@
 <script>
-import CardPageContent from "./CardPageContent.vue";
+import CardContent from "./CardContent.vue";
 // import productsJson from "../db.json";
 import { store } from "../store"
 
 export default {
 	components: {
-		CardPageContent,
+		CardContent,
 	},
 
 	data() {
 		return {
 			store: store,
 			products: store.products,
-			// products: productsJson.products,
+			contatore: store.contatore,		
 		};
 	},
 	mounted() {
-		console.log(this.products)
+		console.log(this.products);
+		console.log(this.contatore);
 	},
 };
 </script>
 
 <template>
 	<main>
+		<h1>{{ store.contatore }}</h1>
+		<button @click="store.incrementa()">INCR</button>
 		<div class="container">
 			<div class="row">
 				<div
 					v-for="(product, id) in products"
-					:key="id"
+					:key="id" :log="console.log(product)"
 					
 					class="col-4"
 				>
-					<CardPageContent :item="product" />
+					<CardContent :item="product" />
 				</div>
 			</div>
 		</div>

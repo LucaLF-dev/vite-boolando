@@ -3,6 +3,7 @@
 import PageHeader from './components/PageHeader.vue';
 import PageFooter from './components/PageFooter.vue';
 import PageContent from './components/PageContent.vue';
+import axios from 'axios';
 import {store} from './store'
 
 export default {
@@ -18,6 +19,17 @@ export default {
       store: store,
       message: 'Hello world!'
     }
+  },created() {
+    // console.log(this.paste)
+    axios.get('http://localhost:3000/products')
+    .then(res => {
+      
+      const products = res.data
+      console.log(res,products)
+      // this.store.paste = paste
+      this.store.products = products
+
+    })
   }
 }
 

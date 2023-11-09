@@ -12,7 +12,7 @@ export default {
 		return {
 			store: store,
 			products: store.products,
-			contatore: store.contatore,		
+				
 		};
 	},
 	mounted() {

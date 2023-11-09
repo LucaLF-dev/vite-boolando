@@ -1,16 +1,17 @@
 <script>
-export default {
-	props: {
-		item: {
-			type: Object,
-			required: true,
-		},
-	},
-	data() {
-		return {
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-        };
-	},
+export default {
+    props: {
+        item: {
+            type: Object,
+            required: true,
+        },
+    },
+    data() {
+        return {};
+    },
+    components: { FontAwesomeIcon }
 };
 </script>
 
@@ -28,7 +29,7 @@ export default {
 		<div class="card-description">
 			<ul>
 				<li class="card-brand-description">{{ item.brand }}</li>
-				<li class="card-name-description">{{ item.name }}</li>
+				<li class="card-name-description">{{ item.name }} <span><button class="button-info"><font-awesome-icon :icon="['fas', 'info']" /></button></span></li>
 				<li class="card-price-description">
 					<span > {{item.price}} &euro;</span>
 				</li>
@@ -69,6 +70,18 @@ export default {
 	font-size: 18px;
 	font-weight: 600;
 	text-transform: uppercase;
+    display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	.button-info {
+		width: 19px;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		border: 1px solid black;
+		background-color: white;
+
+	}
 }
 
 .card-price-description {

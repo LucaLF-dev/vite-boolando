@@ -11,7 +11,7 @@ export default {
 	data() {
 		return {
 			store: store,
-			products: store.products,
+			
 				
 		};
 	},
@@ -27,7 +27,7 @@ export default {
 		<div class="container">
 			<div class="row">
 				<div
-					v-for="(product, id) in products"
+					v-for="(product, id) in store.products"
 					:key="id" :log="console.log(product)"
 					
 					class="col-4"

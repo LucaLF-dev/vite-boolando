@@ -20,13 +20,13 @@ export default {
       message: 'Hello world!'
     }
   },created() {
-    // console.log(this.paste)
+    
     axios.get('http://localhost:3000/products')
     .then(res => {
       
       const products = res.data
       console.log(res,products)
-      // this.store.paste = paste
+      
       this.store.products = products
 
     })

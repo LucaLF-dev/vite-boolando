@@ -29,7 +29,13 @@ export default {
 		<div class="card-description">
 			<ul>
 				<li class="card-brand-description">{{ item.brand }}</li>
-				<li class="card-name-description">{{ item.name }} <span><button class="button-info"><font-awesome-icon :icon="['fas', 'info']" /></button></span></li>
+				<li class="card-name-description">{{ item.name }} 
+					<span>
+						<button @click="$emit('show',item)" class="button-info">
+							<font-awesome-icon :icon="['fas', 'info']" />
+						</button>
+					</span>
+				</li>
 				<li class="card-price-description">
 					<span > {{item.price}} &euro;</span>
 				</li>

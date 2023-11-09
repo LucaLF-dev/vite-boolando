@@ -11,8 +11,20 @@ export default {
 	data() {
 		return {
 			store: store,
+			selectedProduct: {},
 			open: false,
 		};
+	},
+	methods: {
+		showModal(value) {
+
+        this.selectedProduct = value
+        this.open = true
+      },
+		closeModal() {
+        this.open = false
+        this.selectedProduct = {}
+      },
 	},
 	mounted() {},
 };
@@ -28,25 +40,33 @@ export default {
 					:log="console.log(product)"
 					class="col-4"
 				>
-					<CardContent :item="product" />
+					<CardContent @show="showModal" :item="product" />
 				</div>
 			</div>
 		</div>
 	</main>
 
 	<div v-if="open" class="modal">
+		
 		<div class="card">
+			
 			<div class="card__header">
-				<span>
-					
-				</span>
+				<figure>
+					<img :src="selectedProduct.backImage" alt="">
+				</figure>
+				<div class="header__name">
+					<span>
+					{{ selectedProduct.name }}
+				</span></div>
 				<font-awesome-icon
-					@click="closeModal"
+					@click="closeModal" class="icon-closeMod"
 					:icon="['far', 'circle-xmark']"
 				/>
+				
+				
 			</div>
 			<div class="card__body">
-				<p></p>
+				<p>{{ selectedProduct.brand }}</p>
 			</div>
 		</div>
 	</div>
@@ -83,17 +103,27 @@ export default {
 		z-index: 50;
 		background-color: white;
 		border-radius: 20px;
-		padding: 20px;
+		padding: 40px;
 		width: 100%;
 		max-width: 500px;
 		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+		text-align: center;
+		
 
 		.card__header {
 			display: flex;
 			align-items: center;
-			justify-content: space-between;
+			flex-direction: column;
 			font-size: 22px;
 			font-weight: 700;
+			position: relative;
+			
+
+			.icon-closeMod {
+				position: absolute;
+				right: -28px;
+				top: -28px;
+			}
 		}
 	}
 }
